@@ -98,7 +98,7 @@ export const constantRoutes = [
         path: 'ceo',
         name: 'Tree',
         component: () => import('@/views/company/ceo'),
-        meta: { title: '董事长致辞', icon: 'ceo' }
+        meta: { title: '专家团队', icon: 'ceo' }
       },
       {
         path: 'organization',
@@ -124,7 +124,26 @@ export const constantRoutes = [
         component: () => import('@/views/company/addQua'),
         meta: { title: '添加资质', icon: 'list' },
         hidden:true
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: () => import('@/views/company/contact'),
+        meta: { title: '联系我们', icon: 'concat' },
       }
+    ]
+  },
+  {
+    path: '/achievement',
+    component: Layout,
+    meta: { title: '业绩展示', icon: 'form' },
+    children: [
+      {
+        path: 'index',
+        name: 'achievement',
+        component: () => import('@/views/achievement/list'),
+        meta: { title: '业绩展示', icon: 'form' }
+      },
     ]
   },
 

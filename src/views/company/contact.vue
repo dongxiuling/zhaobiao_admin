@@ -40,14 +40,14 @@ export default {
   methods: {
     getData() {
       getData({
-        key: "expert"
+        key: "contact"
       }).then(res => {
-        this.msg = res.data.expert;
+        this.msg = res.data.contact;
       });
     },
     submitHandle() {
       let data = new FormData();
-      data.append("key", "expert");
+      data.append("key", "contact");
       data.append("value", this.msg);
       
       setData(data).then(res => {
