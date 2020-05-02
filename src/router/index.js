@@ -139,11 +139,177 @@ export const constantRoutes = [
     meta: { title: '业绩展示', icon: 'form' },
     children: [
       {
+        path: 'add',
+        name: 'achievement',
+        component: () => import('@/views/achievement/add'),
+        meta: { title: '添加业绩', icon: 'form' },
+        hidden:true
+      },
+      {
         path: 'index',
         name: 'achievement',
         component: () => import('@/views/achievement/list'),
-        meta: { title: '业绩展示', icon: 'form' }
+        meta: { title: '业绩展示', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/news',
+    component: Layout,
+    meta: { title: '新闻中心', icon: 'form' },
+    children: [
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/news/add'),
+        meta: { title: '添加新闻', icon: 'form' },
+        hidden:true
       },
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/news/list'),
+        meta: { title: '企业新闻', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/tendering',
+    component: Layout,
+    meta: { title: '招标信息', icon: 'form' },
+    children: [
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/tendering/add'),
+        meta: { title: '招标列表', icon: 'form' },
+        hidden:true
+      },
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/tendering/list'),
+        meta: { title: '招标列表', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/policy',
+    component: Layout,
+    meta: { title: '政策法规', icon: 'form' },
+    children: [
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/policy/add'),
+        meta: { title: '政策法规', icon: 'form' },
+        hidden:true
+      },
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/policy/list'),
+        meta: { title: '政策法规', icon: 'table' }
+      },
+      {
+        path: 'problemadd',
+        name: 'problemadd',
+        component: () => import('@/views/problem/add'),
+        meta: { title: '常见问题', icon: 'form' },
+        hidden:true
+      },
+      {
+        path: 'problemlist',
+        name: 'problemlist',
+        component: () => import('@/views/problem/list'),
+        meta: { title: '常见问题', icon: 'table' }
+      }
+    ]
+  },
+  {
+    path: '/recruit',
+    component: Layout,
+    meta: { title: '人才招聘', icon: 'form' },
+    children: [
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/recruit/add'),
+        meta: { title: '人才招聘', icon: 'form' },
+        hidden:true
+      },
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/recruit/list'),
+        meta: { title: '人才招聘', icon: 'table' }
+      },
+      {
+        path: 'expert',
+        name: 'expert',
+        component: () => import('@/views/expert/list'),
+        meta: { title: '专家库入库申请', icon: 'form' },
+      }
+    ]
+  },
+  {
+    path: '/message',
+    component: Layout,
+    meta: { title: '留言板', icon: 'form' },
+    children: [
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/message/list'),
+        meta: { title: '留言板', icon: 'table' }
+      },
+      {
+        path: 'detail',
+        name: 'detail',
+        component: () => import('@/views/message/detail'),
+        meta: { title: '留言板详情', icon: 'form' },
+        hidden:true
+      }
+    ]
+  },
+  {
+    path: '/banner',
+    component: Layout,
+    meta: { title: '轮播图', icon: 'form' },
+    children: [
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/banner/list'),
+        meta: { title: '轮播图', icon: 'table' }
+      },
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/banner/add'),
+        meta: { title: '添加轮播图', icon: 'form' },
+        hidden:true
+      }
+    ]
+  },
+  {
+    path: '/user',
+    component: Layout,
+    meta: { title: '用户管理', icon: 'form' },
+    children: [
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/user/list'),
+        meta: { title: '用户管理', icon: 'table' }
+      },
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/user/add'),
+        meta: { title: '添加用户', icon: 'form' },
+        hidden:true
+      }
     ]
   },
 

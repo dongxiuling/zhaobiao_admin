@@ -10,7 +10,7 @@
       <el-form-item>
         <el-button v-if="id" type="primary" @click="editHandle()" size="mini">确定</el-button>
         <el-button v-else type="primary" @click="submitHandle()" size="mini">确定</el-button>
-        <el-button size="mini">取消</el-button>
+        <el-button size="mini" @click="cancelHandle()">取消</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -80,6 +80,8 @@ export default {
         });
         this.$router.push("/company/qualification");
       });
+    },cancelHandle(){
+      this.getData();
     }
   },
   created() {

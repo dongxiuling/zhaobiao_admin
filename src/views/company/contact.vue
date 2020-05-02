@@ -6,7 +6,7 @@
       </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="submitHandle()" size="mini">确定</el-button>
-        <el-button size="mini">取消</el-button>
+         <el-button size="mini" @click="cancelHandle()">取消</el-button>
       </el-form-item>
     </el-form>
   </div>
@@ -56,6 +56,9 @@ export default {
           type: "success"
         });
       });
+    },
+    cancelHandle(){
+      this.getData();
     }
   },
   created() {

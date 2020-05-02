@@ -1,11 +1,15 @@
 <template>
   <div class="app-container">
     <el-form>
-      <el-form-item>
-        <VueUeditorWrap :config="myConfig" v-model="msg" />
+      <el-form-item label="政策法规名称：">
+        <el-input v-model="title" />
       </el-form-item>
       <el-form-item>
-        <el-button type="primary" @click="submitHandle()" size="mini">确定</el-button>
+        <VueUeditorWrap :config="myConfig" v-model="content" />
+      </el-form-item>
+      <el-form-item>
+        <el-button v-if="id" type="primary" @click="editHandle()" size="mini">确定</el-button>
+        <el-button v-else type="primary" @click="submitHandle()" size="mini">确定</el-button>
         <el-button size="mini" @click="cancelHandle()">取消</el-button>
       </el-form-item>
     </el-form>
@@ -14,12 +18,14 @@
 
 <script>
 import VueUeditorWrap from "vue-ueditor-wrap";
-import { getData, setData } from "@/api/company.js";
+import { addEle, getById, editEle } from "@/api/policy.js";
 
 export default {
   data() {
     return {
-      msg: "",
+      title: "",
+      content: "",
+      id: this.$route.query.id,
       myConfig: {
         elementPathEnabled: false,
         wordCount: false, //是否开启字数统计
@@ -39,31 +45,50 @@ export default {
   },
   methods: {
     getData() {
-      getData({
-        key: "honor"
+      getById({
+        id: this.id
       }).then(res => {
-        this.msg = res.data.honor;
+        this.title = res.data.title;
+        this.content = res.data.content;
         // console.log(res)
       });
     },
     submitHandle() {
       let data = new FormData();
-      data.append("key", "honor");
-      data.append("value", this.msg);
+      data.append("title", this.title);
+      data.append("content", this.content);
 
-      setData(data).then(res => {
+      addEle(data).then(res => {
         this.$message({
           message: "添加成功",
           type: "success"
         });
+        this.$router.push("/policy/list");
       });
     },
-    cancelHandle(){
+    // 编辑处理函数
+    editHandle() {
+      let data = new FormData();
+      data.append("id", this.id);
+      data.append("title", this.title);
+      data.append("content", this.content);
+
+      editEle(data).then(res => {
+        this.$message({
+          message: "编辑成功",
+          type: "success"
+        });
+        this.$router.push("/policy/list");
+      });
+    },
+    cancelHandle() {
       this.getData();
     }
   },
   created() {
-    this.getData();
+    if (this.id) {
+      this.getData();
+    }
   }
 };
 </script>

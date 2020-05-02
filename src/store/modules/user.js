@@ -1,6 +1,7 @@
 import { login, logout, getInfo } from '@/api/user'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { resetRouter } from '@/router'
+import { formData } from '@/utils/formData'
 
 const getDefaultState = () => {
   return {
@@ -32,11 +33,16 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      login({ username: username.trim(), password: password }).then(response => {
+      let data = formData({ username: username.trim(), password: password });
+      login(data).then(response => {
         const { data } = response
-        commit('SET_TOKEN', data.token)
-        setToken(data.token)
-        resolve()
+        if (data.id) {
+          commit('SET_TOKEN', data.id)
+          setToken(data.id)
+          resolve()
+        }else{
+          reject("用户名密码错误")
+        }
       }).catch(error => {
         reject(error)
       })

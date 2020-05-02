@@ -1,7 +1,7 @@
 <template>
-  <div class="dashboard-container">
-    <div class="dashboard-text">name: {{ name }}</div>
-  </div>
+<div class="dashboard-container">
+
+</div>
 </template>
 
 <script>
@@ -20,11 +20,11 @@ export default {
 <style lang="scss" scoped>
 .dashboard {
   &-container {
-    margin: 30px;
+   min-height: calc(100vh - 50px);
+    width: 100%;
+    background: url(./../../assets/home.jpg) center center no-repeat;
+    background-size: cover;
   }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
+ 
 }
 </style>
