@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <el-page-header @back="$router.go(-1)" content="返回" style="margin-bottom:20px;"></el-page-header>
     <el-form :model="form">
       <el-form-item label="名称：" label-width="60px">
         <el-input v-model="form.title" />
@@ -7,7 +8,7 @@
       <el-form-item label="图片：" label-width="60px">
         <el-upload
           class="avatar-uploader"
-          action="http://192.168.1.198:80/tender/admin/img_upload"
+          action="http://www.gxxmglzx.com/tender/admin/img_upload"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"
@@ -51,7 +52,7 @@ export default {
         // 初始容器宽度
         initialFrameWidth: "100%",
         // 上传文件接口（这个地址是我为了方便各位体验文件上传功能搭建的临时接口，请勿在生产环境使用！！！）
-        serverUrl: "http://192.168.1.198:80/tender/ueditor/controller.php",
+        serverUrl: "http://www.gxxmglzx.com/tender/ueditor/controller.php",
         // UEditor 资源文件的存放路径，如果你使用的是 vue-cli 生成的项目，通常不需要设置该选项，vue-ueditor-wrap 会自动处理常见的情况，如果需要特殊配置，参考下方的常见问题2
         UEDITOR_HOME_URL: process.env.BASE_URL + "UEditor/"
       }
@@ -148,10 +149,12 @@ export default {
   height: 178px;
   line-height: 178px;
   text-align: center;
+  border:1px dashed #8c939d;
 }
 .avatar {
   width: 178px;
   height: 178px;
   display: block;
+
 }
 </style>

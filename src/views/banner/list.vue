@@ -10,7 +10,7 @@
       <el-table-column label="标题" prop="content"></el-table-column>
       <el-table-column label="图片">
         <template slot-scope="scope">
-          <img style="width:100%;" :src="'http://192.168.1.198:80/tender/' + scope.row.img_url" alt />
+          <img style="width:100%;" :src="'http://www.gxxmglzx.com/tender/' + scope.row.img_url" alt />
         </template>
       </el-table-column>
       <el-table-column align="right">

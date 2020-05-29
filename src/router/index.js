@@ -136,7 +136,7 @@ export const constantRoutes = [
   {
     path: '/achievement',
     component: Layout,
-    meta: { title: '业绩展示', icon: 'form' },
+    meta: { title: '业绩展示', icon: 'druid' },
     children: [
       {
         path: 'add',
@@ -156,7 +156,7 @@ export const constantRoutes = [
   {
     path: '/news',
     component: Layout,
-    meta: { title: '新闻中心', icon: 'form' },
+    meta: { title: '新闻中心', icon: 'online' },
     children: [
       {
         path: 'add',
@@ -169,34 +169,34 @@ export const constantRoutes = [
         path: 'list',
         name: 'list',
         component: () => import('@/views/news/list'),
-        meta: { title: '企业新闻', icon: 'table' }
+        meta: { title: '企业新闻', icon: 'news' }
       }
     ]
   },
   {
     path: '/tendering',
     component: Layout,
-    meta: { title: '招标信息', icon: 'form' },
+    meta: { title: '招标信息', icon: 'zhaobiao' },
     children: [
       {
         path: 'add',
         name: 'add',
         component: () => import('@/views/tendering/add'),
-        meta: { title: '招标列表', icon: 'form' },
+        meta: { title: '招标列表', icon: 'zhaobiao' },
         hidden:true
       },
       {
         path: 'list',
         name: 'list',
         component: () => import('@/views/tendering/list'),
-        meta: { title: '招标列表', icon: 'table' }
+        meta: { title: '招标列表', icon: 'zhaobiao' }
       }
     ]
   },
   {
     path: '/policy',
     component: Layout,
-    meta: { title: '政策法规', icon: 'form' },
+    meta: { title: '政策法规', icon: 'zhengce' },
     children: [
       {
         path: 'add',
@@ -215,21 +215,21 @@ export const constantRoutes = [
         path: 'problemadd',
         name: 'problemadd',
         component: () => import('@/views/problem/add'),
-        meta: { title: '常见问题', icon: 'form' },
+        meta: { title: '常见问题', icon: 'question' },
         hidden:true
       },
       {
         path: 'problemlist',
         name: 'problemlist',
         component: () => import('@/views/problem/list'),
-        meta: { title: '常见问题', icon: 'table' }
+        meta: { title: '常见问题', icon: 'question' }
       }
     ]
   },
   {
     path: '/recruit',
     component: Layout,
-    meta: { title: '人才招聘', icon: 'form' },
+    meta: { title: '人才招聘', icon: 'zhaopin' },
     children: [
       {
         path: 'add',
@@ -248,26 +248,26 @@ export const constantRoutes = [
         path: 'expert',
         name: 'expert',
         component: () => import('@/views/expert/list'),
-        meta: { title: '专家库入库申请', icon: 'form' },
+        meta: { title: '专家库入库申请', icon: 'list' },
       }
     ]
   },
   {
     path: '/message',
     component: Layout,
-    meta: { title: '留言板', icon: 'form' },
+    meta: { title: '留言板', icon: 'liuyan' },
     children: [
       {
         path: 'list',
         name: 'list',
         component: () => import('@/views/message/list'),
-        meta: { title: '留言板', icon: 'table' }
+        meta: { title: '留言板', icon: 'liuyan' }
       },
       {
         path: 'detail',
         name: 'detail',
         component: () => import('@/views/message/detail'),
-        meta: { title: '留言板详情', icon: 'form' },
+        meta: { title: '留言板详情', icon: 'liuyan' },
         hidden:true
       }
     ]
@@ -275,13 +275,13 @@ export const constantRoutes = [
   {
     path: '/banner',
     component: Layout,
-    meta: { title: '轮播图', icon: 'form' },
+    meta: { title: '轮播图', icon: 'lunbotu' },
     children: [
       {
         path: 'list',
         name: 'list',
         component: () => import('@/views/banner/list'),
-        meta: { title: '轮播图', icon: 'table' }
+        meta: { title: '轮播图', icon: 'lunbotu' }
       },
       {
         path: 'add',
@@ -295,13 +295,13 @@ export const constantRoutes = [
   {
     path: '/user',
     component: Layout,
-    meta: { title: '用户管理', icon: 'form' },
+    meta: { title: '用户管理', icon: 'clipboard' },
     children: [
       {
         path: 'list',
         name: 'list',
         component: () => import('@/views/user/list'),
-        meta: { title: '用户管理', icon: 'table' }
+        meta: { title: '用户管理', icon: 'list' }
       },
       {
         path: 'add',

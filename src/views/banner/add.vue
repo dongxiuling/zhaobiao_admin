@@ -7,7 +7,7 @@
       <el-form-item label="图片：" label-width="60px">
         <el-upload
           class="avatar-uploader"
-          action="http://192.168.1.198:80/tender/admin/img_upload"
+          action="http://www.gxxmglzx.com/tender/admin/img_upload"
           :show-file-list="false"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload"
@@ -93,6 +93,8 @@ export default {
   height: 178px;
   line-height: 178px;
   text-align: center;
+  border:1px dashed #8c939d;
+
 }
 .avatar {
   width: 178px;
