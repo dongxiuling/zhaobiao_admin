@@ -312,7 +312,11 @@ export default {
     }
   },
   created() {
-    this.getData();
+     if (this.$route.query.id) {
+      this.activeName = this.$route.query.id;
+      this.getData();
+    }
+    // this.getData();
   }
 };
 </script>

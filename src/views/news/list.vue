@@ -10,7 +10,7 @@
       <el-table-column label="新闻标题" prop="title"></el-table-column>
       <el-table-column label="时间" prop="time"></el-table-column>
       <el-table-column align="right">
-        <template slot="header" slot-scope="scope">
+        <template slot="header">
           <el-input v-model="search" size="mini" placeholder="输入关键字搜索"  @keyup.enter.native="getData()" />
         </template>
         <template slot-scope="scope">

@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: '广西建设工程项目管理中心后台管理系统',
 
   /**
    * @type {boolean} true | false

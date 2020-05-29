@@ -16,9 +16,14 @@
         <el-table style="width: 100%" border :data="list">
           <el-table-column label="名称" prop="title"></el-table-column>
           <el-table-column label="时间" prop="time"></el-table-column>
-          <el-table-column >
-             <template slot="header" slot-scope="scope">
-              <el-input v-model="search" size="mini" placeholder="输入关键字搜索" @keyup.enter.native="getData()" />
+          <el-table-column>
+            <template slot="header">
+              <el-input
+                v-model="search"
+                size="mini"
+                placeholder="输入关键字搜索"
+                @keyup.enter.native="getData()"
+              />
             </template>
             <template slot-scope="scope">
               <el-button size="mini" @click="editHandle(scope.row.id)">编辑</el-button>
@@ -53,9 +58,14 @@
         <el-table style="width: 100%" border :data="list">
           <el-table-column label="名称" prop="title"></el-table-column>
           <el-table-column label="时间" prop="time"></el-table-column>
-          <el-table-column >
-             <template slot="header" slot-scope="scope">
-              <el-input v-model="search" size="mini" placeholder="输入关键字搜索"  @keyup.enter.native="getData()" />
+          <el-table-column>
+            <template slot="header">
+              <el-input
+                v-model="search"
+                size="mini"
+                placeholder="输入关键字搜索"
+                @keyup.enter.native="getData()"
+              />
             </template>
             <template slot-scope="scope">
               <el-button size="mini" @click="editHandle(scope.row.id)">编辑</el-button>
@@ -90,9 +100,14 @@
         <el-table style="width: 100%" border :data="list">
           <el-table-column label="名称" prop="title"></el-table-column>
           <el-table-column label="时间" prop="time"></el-table-column>
-          <el-table-column >
-            <template slot="header" slot-scope="scope">
-              <el-input v-model="search" size="mini" placeholder="输入关键字搜索"  @keyup.enter.native="getData()" />
+          <el-table-column>
+            <template slot="header">
+              <el-input
+                v-model="search"
+                size="mini"
+                placeholder="输入关键字搜索"
+                @keyup.enter.native="getData()"
+              />
             </template>
             <template slot-scope="scope">
               <el-button size="mini" @click="editHandle(scope.row.id)">编辑</el-button>
@@ -127,7 +142,7 @@ export default {
       current: 1,
       pageSize: 10,
       list: [],
-      search:""
+      search: ""
     };
   },
   methods: {
@@ -178,7 +193,7 @@ export default {
     },
     handleClick(tab, event) {
       // console.log(tab, event);
-      this.search = ""
+      this.search = "";
       this.getData();
     },
     handleCurrentChange(value) {
@@ -187,9 +202,9 @@ export default {
     }
   },
   created() {
-    this.getData();
-    if(this.$route.query.id){
+    if (this.$route.query.id) {
       this.activeName = this.$route.query.id;
+      this.getData();
     }
   }
 };

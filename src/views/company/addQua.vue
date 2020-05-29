@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-page-header @back="$router.go(-1)" content="返回" style="margin-bottom:20px;"></el-page-header>
+    <el-page-header @back="$router.go(-1)" content="" style="margin-bottom:20px;"></el-page-header>
     <el-form>
       <el-form-item label="资质名称：">
         <el-input v-model="title" />

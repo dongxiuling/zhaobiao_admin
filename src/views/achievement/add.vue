@@ -1,6 +1,6 @@
 <template>
   <div class="app-container">
-    <el-page-header @back="$router.go(-1)" content="返回" style="margin-bottom:20px;"></el-page-header>
+    <el-page-header @back="$router.go(-1)" content style="margin-bottom:20px;"></el-page-header>
     <el-form :model="form">
       <el-form-item label="名称：" label-width="60px">
         <el-input v-model="form.title" />
@@ -80,7 +80,10 @@ export default {
           type: "success"
         });
         this.$router.push({
-          path: "/achievement/index"
+          path: "/achievement/index",
+          query: {
+            id: this.form.typeId
+          }
         });
       });
     },
@@ -99,7 +102,12 @@ export default {
           message: "编辑成功",
           type: "success"
         });
-        this.$router.push("/achievement/index");
+        this.$router.push({
+          path: "/achievement/index",
+          query: {
+            id: this.form.typeId
+          }
+        });
       });
     },
     cancelHandle() {
@@ -149,12 +157,11 @@ export default {
   height: 178px;
   line-height: 178px;
   text-align: center;
-  border:1px dashed #8c939d;
+  border: 1px dashed #8c939d;
 }
 .avatar {
   width: 178px;
   height: 178px;
   display: block;
-
 }
 </style>
