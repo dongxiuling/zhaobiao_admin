@@ -204,8 +204,8 @@ export default {
   created() {
     if (this.$route.query.id) {
       this.activeName = this.$route.query.id;
-      this.getData();
     }
+    this.getData();
   }
 };
 </script>

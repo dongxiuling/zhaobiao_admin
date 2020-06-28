@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '广西建设工程项目管理中心后台管理系统',
+  title: '广西建设工程项目管理中心有限责任公司后台管理系统',
 
   /**
    * @type {boolean} true | false
@@ -14,3 +14,5 @@ module.exports = {
    */
   sidebarLogo: false
 }
+
+
