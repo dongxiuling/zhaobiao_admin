@@ -55,6 +55,7 @@ export default {
       });
       getList(data).then(res => {
         this.tableData = res.data.list;
+        this.total = res.data.total;
       });
     },
     editHandle(id) {
