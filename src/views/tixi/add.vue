@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { getData, addEle, editEle, getById } from "@/api/banner.js";
+import { getData, addEle, editEle, getById } from "@/api/tixi.js";
 import { formData } from "@/utils/formData.js";
 export default {
   data() {
@@ -48,13 +48,13 @@ export default {
           type: "success"
         });
         this.$router.push({
-          path: "/banner/list"
+          path: "/tixi/list"
         });
       });
     },
     cancelHandle() {
       this.$router.push({
-        path: "/banner/list"
+        path: "/tixi/list"
       });
     },
     handleAvatarSuccess(res, file) {

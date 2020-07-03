@@ -293,6 +293,26 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/tixi',
+    component: Layout,
+    meta: { title: '三大体系', icon: 'lunbotu' },
+    children: [
+      {
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/tixi/list'),
+        meta: { title: '三大体系图', icon: 'lunbotu' }
+      },
+      {
+        path: 'add',
+        name: 'add',
+        component: () => import('@/views/tixi/add'),
+        meta: { title: '添加轮播图', icon: 'form' },
+        hidden:true
+      }
+    ]
+  },
+  {
     path: '/user',
     component: Layout,
     meta: { title: '用户管理', icon: 'clipboard' },
